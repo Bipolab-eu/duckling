@@ -1,21 +1,12 @@
+'use client'
+
 import React from 'react'
 import styled, { css } from 'styled-components'
 
 interface Props {
   children: string;
-  onClick?: () => void;
   variant: 'primary' | 'secondary';
-}
-
-export const Button: React.FC<Props> = ({ children, onClick, variant }) => {
-  return (
-    <StyledButton
-      onClick={onClick}
-      variant={variant}
-    >
-      {children}
-    </StyledButton>
-  )
+  onClick: () => void;
 }
 
 const variants = {
@@ -30,15 +21,29 @@ const variants = {
   secondary: css`
     background: #FAFAFA;
     color: #171717;
+    &:hover {
+      background: #171717;
+      color: #bbb7b7;
+    }
   `
-}; 
+};
 
 const StyledButton = styled.button<{ variant: 'primary' | 'secondary' }>`
   padding: 1rem;
   font-family: Arial;
   font-size: 1rem;
-  line-height: 100%;
+  line-height: 1rem;
   border: none;
   ${({ variant }) => variants[variant]}
 `
 
+export const Button: React.FC<Props> = ({ children, variant, onClick }) => {
+  return (
+    <StyledButton
+      onClick={onClick}
+      variant={variant}
+    >
+      {children}
+    </StyledButton>
+  )
+}
