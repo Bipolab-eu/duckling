@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 interface Props {
   title: string;
@@ -7,30 +7,28 @@ interface Props {
 }
 
 const StyledDetails = styled.details`
+  width: 100%;
+  background: #F9FAFB;
+  color: #111827;
+
   summary {
-    font-weight: bold;
+    padding: 1rem;
+    border-bottom: 1px solid #111827;
     cursor: pointer;
-    padding: 0.5rem;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
     list-style-type: none;
 
     &:hover {
-      background-color: #e0e0e0;
+      background-color: #9f9fa1;
     }
   }
 
   p {
-    margin: 0;
-    padding: 0.5rem;
-    background-color: #fafafa;
-    border-left: 2px solid #ccc;
-  }
+    padding: 1rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
 
-  &[open] p {
-    border-left-color: #007bff;
   }
 `;
 
