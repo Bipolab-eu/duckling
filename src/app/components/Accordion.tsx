@@ -44,11 +44,9 @@ const StyledDetails = styled.details`
   }
 `;
 
-export const Accordion: React.FC<Props> = ({ title, description }) => {
-  return (
-    <StyledDetails name="reqs">
-      <summary>{title || 'Title Example'}</summary>
-      <p>{description || 'Description Example'}</p>
-    </StyledDetails>
-  )
-}
+export const Accordion: React.FC<Props> = ({ title, description }) => (
+  <StyledDetails name="reqs">
+    <summary>{title}</summary>
+    <p>{description}</p>
+  </StyledDetails>
+)

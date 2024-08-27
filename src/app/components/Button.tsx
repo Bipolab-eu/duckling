@@ -37,13 +37,11 @@ const StyledButton = styled.button<{ variant: 'primary' | 'secondary' }>`
   ${({ variant }) => variants[variant]}
 `
 
-export const Button: React.FC<Props> = ({ children, variant, onClick }) => {
-  return (
-    <StyledButton
-      onClick={onClick}
-      variant={variant}
-    >
-      {children}
-    </StyledButton>
-  )
-}
+export const Button: React.FC<Props> = ({ children, variant, onClick }) => (
+  <StyledButton
+    onClick={onClick}
+    variant={variant}
+  >
+    {children}
+  </StyledButton>
+)
