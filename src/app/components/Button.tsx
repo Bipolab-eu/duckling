@@ -20,16 +20,16 @@ export const Button: React.FC<Props> = ({ children, onClick, variant }) => {
 
 const variants = {
   primary: css`
-    background: '#171717';
-    color: '#FAFAFA';
+    background: #171717;
+    color: #FAFAFA;
     &:hover {
-      background: #333333;
-      border-color: #333333;
+      background: #bbb7b7;
+      color: #171717;
     }
   `,
   secondary: css`
-    background: '#FAFAFA';
-    color: '#171717';
+    background: #FAFAFA;
+    color: #171717;
   `
 }; 
 
@@ -38,6 +38,7 @@ const StyledButton = styled.button<{ variant: 'primary' | 'secondary' }>`
   font-family: Arial;
   font-size: 1rem;
   line-height: 100%;
+  border: none;
   ${({ variant }) => variants[variant]}
 `
 

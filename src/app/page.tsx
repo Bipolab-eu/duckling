@@ -12,7 +12,7 @@ export default function Home() {
     <Button
       children={'Haz click'}
       onClick={onSend}
-      variant='primary'
+      variant='secondary'
     />
   )
 }
