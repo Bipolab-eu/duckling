@@ -39,15 +39,4 @@
   .accordion[open] svg {
     @apply origin-center rotate-180 duration-75
   }
-
-  /* Buttons */
-  .btn-primary, .btn-secondary {
-    @apply border border-gray-900 p-4 text-sm text-center leading-none rounded-full inline-block min-w-32 w-fit
-  }
-  .btn-primary {
-    @apply bg-gray-50 text-gray-900 hover:bg-gray-900 hover:text-gray-50
-  }
-  .btn-secondary {
-    @apply bg-gray-900 text-gray-50 hover:bg-gray-50 hover:text-gray-900
-  }
 }
