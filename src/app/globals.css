@@ -18,25 +18,4 @@
 }
 
 @layer components {
-  /* Accordion */
-  .accordion {
-    @apply bg-gray-50 text-gray-900 rounded-2xl border border-gray-900
-  }
-  .accordion summary {
-    @apply p-4 list-none flex justify-between items-center cursor-pointer leading-none
-  }
-  .accordion summary::-webkit-details-marker {
-    @apply hidden
-  }
-  .accordion-content {
-    @apply p-4
-  }
-
-  /* Accordion Interaction */
-  .accordion svg {
-    @apply origin-center rotate-0 duration-75
-  }
-  .accordion[open] svg {
-    @apply origin-center rotate-180 duration-75
-  }
 }

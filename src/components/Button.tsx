@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const styles = {
+const { base, variants } = {
   base: 'border border-gray-900 p-4 text-sm text-center leading-none rounded-full inline-block min-w-32 w-fit',
 
   variants: {
@@ -13,13 +13,13 @@ const styles = {
 
 interface Props {
   label: string,
-  variant: keyof typeof styles.variants,
+  variant: keyof typeof variants,
   onPress: () => void
 }
 
 export const Button: React.FC<Props> = ({ label, variant, onPress }) => (
   <button
-    className={`${styles.base} ${styles.variants[variant]}`}
+    className={`${base} ${variants[variant]}`}
     onClick={onPress}
   >
     {label}
