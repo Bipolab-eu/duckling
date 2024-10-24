@@ -1,12 +1,21 @@
-import { Accordion } from "@/components/Accordion";
-import { Button } from "@/components/Button";
+import { BentoGrid } from "@/components/BentoGrid";
+import Card from "@/components/Card";
 
 export default function Home() {
 
   return (
-    <div className="p-4 flex flex-col gap-4">
-      <Accordion title="hola que tal" text="aqui todo bien"></Accordion>
-      <Button variant="primary" label="fksladhjgfasdk"></Button>
+    <div className="p-4">
+      <BentoGrid>
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+        <div className="rounded-2xl bg-gray-200 w-full h-80" />
+      </BentoGrid>
     </div>
   );
 }
