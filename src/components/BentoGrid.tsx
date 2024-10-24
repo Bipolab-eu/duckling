@@ -19,7 +19,7 @@ export const BentoGrid: React.FC<Props> = ({ children }: any) => {
   };
 
   return (
-    <section className="grid gap-4 grid-cols-1 md:grid-cols-4">
+    <section className="grid gap-4 md:grid-cols-4">
       {
         React.Children.map(children, (child, idx) =>
           <article className={`${gridColumnStyles[idx]}`}>
