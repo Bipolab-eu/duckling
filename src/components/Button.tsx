@@ -31,7 +31,15 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   openInNewTab?: boolean
 }
 
-export const Button: React.FC<Props> = ({ label, shape, variant, size, href, openInNewTab, onClick }) => {
+export const Button: React.FC<Props> = ({
+  label,
+  shape,
+  variant,
+  size,
+  href,
+  openInNewTab,
+  onClick
+}) => {
   const classname = `${base} ${shapes[shape]} ${variants[variant]} ${sizes[size]}`
 
   return href
