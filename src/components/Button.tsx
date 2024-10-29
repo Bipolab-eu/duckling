@@ -2,23 +2,22 @@ import Link from 'next/link'
 import React from 'react'
 
 const { base, shapes, variants, sizes } = {
-  base: 'border border-gray-900 text-center leading-none inline-block min-w-32 w-fit',
+  base: 'text-center leading-none inline-block w-fit h-fit',
 
   shapes: {
-    squared: '',
+    squared: 'rounded',
     rounded: 'rounded-full',
   },
 
   variants: {
-    primary: 'bg-gray-50 text-gray-900 md:hover:bg-gray-900 md:hover:text-gray-50',
-    secondary: 'bg-gray-900 text-gray-50 md:hover:bg-gray-50 md:hover:text-gray-900',
-    ghost: 'border-none md:hover:bg-gray-900 md:hover:text-gray-50'
+    primary:   'bg-neutral-800 text-neutral-50  md:hover:brightness-150',
+    secondary: 'bg-neutral-400 text-neutral-800 md:hover:brightness-125',
   },
 
   sizes: {
-    large: 'p-6 text-xl',
-    normal: 'p-4 text-base',
-    small: 'p-2 text-sm'
+    large:  'p-5 min-w-24 text-xl',
+    normal: 'p-4 min-w-20 text-base',
+    small:  'p-3 min-w-16 text-xs',
   }
 }
 
@@ -54,10 +53,9 @@ export const Button: React.FC<Props> = ({
     )
     :
     <button
-      className={`${classname} text-s`}
+      className={`${classname}`}
       onClick={onClick}
     >
       {label}
     </button>
 }
-
