@@ -10,8 +10,9 @@ const { base, shapes, variants, sizes } = {
   },
 
   variants: {
-    primary:   'bg-neutral-800 text-neutral-50  md:hover:brightness-150',
-    secondary: 'bg-neutral-400 text-neutral-800 md:hover:brightness-125',
+    primary:   'bg-neutral-800 text-neutral-50  sm:hover:brightness-150',
+    secondary: 'bg-neutral-400 text-neutral-800 sm:hover:brightness-125',
+    ghost:     'text-neutral-800 sm:hover:brightness-150'
   },
 
   sizes: {
@@ -45,7 +46,7 @@ export const Button: React.FC<Props> = ({
     ? (
       <Link
         href={href}
-        className={`${classname}`}
+        className={classname}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noopener noreferrer' : undefined}
       >{label}
@@ -53,7 +54,7 @@ export const Button: React.FC<Props> = ({
     )
     :
     <button
-      className={`${classname}`}
+      className={classname}
       onClick={onClick}
     >
       {label}
