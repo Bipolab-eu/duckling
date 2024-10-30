@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Button } from './Button';
 
 const cardStyles = {
@@ -17,7 +17,7 @@ interface Props {
   title: string,
   resume: string
   url?: string,
-  children?: React.ReactNode,
+  children?: ReactNode,
   shape: keyof typeof cardStyles.shapes,
   clamp?: boolean
 }
