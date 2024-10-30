@@ -24,7 +24,7 @@ export const Hero: React.FC<Props> = ({ title, subtitle, shape }) => {
 
   return (
     <header className={`flex flex-col justify-center h-96 gap-8 p-4 ${backgroundColor} ${textAlignment} ${shapes[shape]}`}>
-      <section className='grid gap-2 md:w-2/4'>
+      <section className='space-y-4 md:w-2/4'>
         <h1 className={heroTitle}>{title}</h1>
         <h2 className={heroSubtitle}>{subtitle}</h2>
       </section>
