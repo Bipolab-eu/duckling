@@ -1,11 +1,10 @@
-import React from 'react'
-import { Button } from './Button'
+import React, { ReactNode } from 'react'
 
 const heroStyles = {
   backgroundColor: 'bg-gradient-to-b from-neutral-950 to-neutral-500',
-  textAlignment: 'text-center text-neutral-50',
-  heroTitle:    'text-2xl md:text-4xl font-extrabold',
-  heroSubtitle: 'text-lg  md:text-2xl font-medium',
+  textAlignment: 'text-left',
+  heroTitle: 'text-2xl text-neutral-50 font-extrabold md:text-4xl',
+  heroSubtitle: 'text-lg text-neutral-50 font-medium md:text-2xl',
 
   shapes: {
     squared: 'rounded-none',
@@ -17,20 +16,27 @@ interface Props {
   title: string,
   subtitle: string,
   shape: keyof typeof heroStyles.shapes,
+  children?: ReactNode
 }
 
-export const Hero: React.FC<Props> = ({ title, subtitle, shape }) => {
+export const Hero: React.FC<Readonly<Props>> = ({
+  title,
+  subtitle,
+  shape,
+  children
+}) => {
+
   const { backgroundColor, textAlignment, heroTitle, heroSubtitle, shapes } = heroStyles
 
   return (
-    <header className={`flex flex-col justify-center items-center py-24 min-h-96 gap-8 ${backgroundColor} ${textAlignment} ${shapes[shape]}`}>
-      <section className='space-y-4 px-4 w-full md:w-2/4'>
-        <h1 className={heroTitle}>{title}</h1>
-        <h2 className={heroSubtitle}>{subtitle}</h2>
-      </section>
-      <section className='px-4 w-full md:w-2/4'>
-        <Button label='Button Label' shape='squared' variant='secondary' size='normal' />
-      </section>
+    <header className={`flex items-center min-h-96 py-24 ${backgroundColor} ${textAlignment} ${shapes[shape]}`}>
+      <div className='container mx-auto'>
+        <section className='inline-block space-y-4 px-4 w-full md:w-2/4'>
+          <h1 className={heroTitle}>{title}</h1>
+          <h2 className={heroSubtitle}>{subtitle}</h2>
+          {children}
+        </section>
+      </div>
     </header>
   )
 }

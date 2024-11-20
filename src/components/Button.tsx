@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 const { base, shapes, variants, sizes } = {
   base: 'text-center leading-none inline-block w-fit h-fit',
@@ -12,7 +12,7 @@ const { base, shapes, variants, sizes } = {
   variants: {
     primary:   'bg-neutral-800 text-neutral-50  md:hover:brightness-150',
     secondary: 'bg-neutral-400 text-neutral-800 md:hover:brightness-125',
-    ghost:     'text-neutral-800 md:hover:brightness-150'
+    ghost:     'text-neutral-800 px-0 min-w-0 md:hover:brightness-150'
   },
 
   sizes: {
@@ -23,7 +23,7 @@ const { base, shapes, variants, sizes } = {
 }
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string,
+  children: ReactNode,
   shape: keyof typeof shapes,
   variant: keyof typeof variants,
   size: keyof typeof sizes,
@@ -31,8 +31,8 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   openInNewTab?: boolean
 }
 
-export const Button: React.FC<Props> = ({
-  label,
+export const Button: React.FC<Readonly<Props>> = ({
+  children,
   shape,
   variant,
   size,
@@ -40,6 +40,7 @@ export const Button: React.FC<Props> = ({
   openInNewTab,
   onClick
 }) => {
+
   const classname = `${base} ${shapes[shape]} ${variants[variant]} ${sizes[size]}`
 
   return href
@@ -49,7 +50,7 @@ export const Button: React.FC<Props> = ({
         className={classname}
         target={openInNewTab ? '_blank' : '_self'}
         rel={openInNewTab ? 'noopener noreferrer' : undefined}
-      >{label}
+      >{children}
       </Link>
     )
     :
@@ -57,6 +58,6 @@ export const Button: React.FC<Props> = ({
       className={classname}
       onClick={onClick}
     >
-      {label}
+      {children}
     </button>
 }
